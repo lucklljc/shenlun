@@ -66,7 +66,11 @@ const updateWordCount = () => {
 onMounted(() => {
     // answers.value = Array(forCount.value).fill('')
     const saved = localStorage.getItem('content')
-    const isNull = saved? JSON.parse(saved).filter(item => /^[\u4e00-\u9fa5]+$/.test(item)).length == 0 : false
+    const isNull = saved ? 
+        JSON.parse(saved)
+            .filter((item: string) => item ? /^[\u4e00-\u9fa5]+$/.test(item) : false)
+            .length === 0 
+        : false
     // console.log(isNull);
     if(!isNull){
         ElMessage({
