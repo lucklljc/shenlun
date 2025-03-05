@@ -16,13 +16,14 @@
     </div>
     <el-button type="primary" class="copy" @click="handleCopy">复制当前内容到粘贴板</el-button>
     <el-button type="primary" class="copy" @click="handleClear">清空当前内容</el-button>
-    </div>
-    
     <div class="save">
         <div v-loading="loading" class="loading"></div>
         <el-text class="text-save" v-if="!loading" type="primary" >内容已保存!</el-text>
         <el-text class="text-save" v-else type="danger">保存中</el-text>
     </div>
+    </div>
+    
+    
     <div class="container">
         <div id="answerSheet">
             <div class="row" v-for="count in forCount">
@@ -196,11 +197,11 @@ const handleClear = () => {
 }
 .save {
     display: flex;
-    width: fit-content;
+    width: 400px;
     height: fit-content;
-    position: absolute;
-    right: 100px;
-    top:55px;
+    position: relative;
+    top: 7px;
+    
 }
 .loading {
     width: 50px;
